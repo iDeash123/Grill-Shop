@@ -1,3 +1,7 @@
+SECRET_KEY=django-insecure-stn4u9^po5*2c-!p=_$6=o*#nhx+cymv!pefo7oz50-l9#er&h
+
+
+
 venv/
 .pylintrc
 __pycache__/
