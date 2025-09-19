@@ -1,0 +1,115 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block title %}Головна - Grill Masters{% endblock %}
+
+{% block content %}
+<div class="container">
+    <!-- Геро-секція -->
+    <div class="hero-section text-center py-5 mb-5">
+        <h1 class="display-4 fw-bold text-primary">Ласкаво просимо до Grill Masters</h1>
+        <p class="lead">Відкрийте нашу преміальну колекцію грилів для ідеального приготування</p>
+    </div>
+    
+    <!-- Секція продуктів -->
+    <div class="row">
+        <div class="col-12">
+            <h2 class="mb-4">Популярні грилі</h2>
+        </div>
+    </div>
+    
+    <div class="row g-4">
+        {% for product in products %}
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="card h-100 shadow-sm product-card">
+                <!-- Зображення продукту -->
+                <div class="card-img-wrapper">
+                    {% if product.image %}
+                        <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+                    {% else %}
+                        <div class="card-img-top bg-light d-flex align-items-center justify-content-center" style="height: 200px;">
+                            <i class="fas fa-image text-muted fa-3x"></i>
+                        </div>
+                    {% endif %}
+                </div>
+                
+                <!-- Інформація про продукт -->
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    
+                    <!-- Секція ціни -->
+                    <div class="price-section mb-3">
+                        {% if product.discount > 0 %}
+                            <div class="d-flex align-items-center">
+                                <span class="text-muted text-decoration-line-through me-2">${{ product.price }}</span>
+                                <span class="text-danger fw-bold fs-5">${{ product.sell_price }}</span>
+                                <span class="badge bg-danger ms-2">{{ product.discount }}% ЗНИЖКА</span>
+                            </div>
+                        {% else %}
+                            <span class="text-primary fw-bold fs-5">${{ product.price }}</span>
+                        {% endif %}
+                    </div>
+                    
+                    <!-- Наявність -->
+                    <div class="stock-status mb-3">
+                        {% if product.stock > 0 %}
+                            <span class="badge bg-success">
+                                <i class="fas fa-check-circle"></i> В наявності ({{ product.stock }} доступно)
+                            </span>
+                        {% else %}
+                            <span class="badge bg-danger">
+                                <i class="fas fa-times-circle"></i> Немає в наявності
+                            </span>
+                        {% endif %}
+                    </div>
+                    
+                    <!-- Кнопки дій -->
+                    <div class="mt-auto">
+                        <div class="d-grid gap-2">
+                            {% if product.stock > 0 %}
+                                <a href="#" class="btn btn-warning">
+                                    <i class="fas fa-cart-plus"></i> Додати до кошика
+                                </a>
+                            {% else %}
+                                <button class="btn btn-secondary" disabled>
+                                    <i class="fas fa-times"></i> Недоступно
+                                </button>
+                            {% endif %}
+                            <a href="{{ product.get_absolute_url }}" class="btn btn-outline-primary">
+                                <i class="fas fa-eye"></i> Деталі
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-12">
+            <div class="alert alert-info text-center">
+                <h4>Продукти відсутні</h4>
+                <p>Будь ласка, завітайте пізніше, щоб переглянути нашу нову колекцію грилів.</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    
+    <!-- Додаткова інформація -->
+    <div class="row mt-5 py-5 bg-light rounded">
+        <div class="col-md-4 text-center mb-4">
+            <i class="fas fa-fire fa-3x text-warning mb-3"></i>
+            <h4>Преміальна якість</h4>
+            <p>Високоякісні матеріали та відмінне виконання для довговічності.</p>
+        </div>
+        <div class="col-md-4 text-center mb-4">
+            <i class="fas fa-shipping-fast fa-3x text-warning mb-3"></i>
+            <h4>Швидка доставка</h4>
+            <p>Надійна та швидка доставка, щоб ви могли почати готувати швидше.</p>
+        </div>
+        <div class="col-md-4 text-center mb-4">
+            <i class="fas fa-tools fa-3x text-warning mb-3"></i>
+            <h4>Експертна підтримка</h4>
+            <p>Професійна допомога з встановлення та обслуговування.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

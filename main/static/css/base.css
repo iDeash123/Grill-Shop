@@ -1,0 +1,327 @@
+/* Custom CSS for Grill Masters E-commerce Site */
+
+/* Base Styles */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  padding-top: 76px; /* Account for fixed navbar */
+}
+
+/* Navigation Styles */
+.navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Main Content */
+.main-content {
+  min-height: calc(100vh - 200px);
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 15px;
+  margin-top: 20px;
+}
+
+.hero-section h1 {
+  color: white !important;
+}
+
+/* Product Cards */
+.product-card {
+  transition: all 0.3s ease;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-color: #007bff;
+}
+
+.card-img-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+.card-body {
+  padding: 1.25rem;
+}
+
+/* Price Styling */
+.price-section {
+  margin-bottom: 1rem;
+}
+
+.price-section .text-decoration-line-through {
+  font-size: 0.9rem;
+}
+
+.price-section .fs-5 {
+  font-size: 1.25rem !important;
+  font-weight: bold;
+}
+
+/* Stock Status */
+.stock-status .badge {
+  font-size: 0.75rem;
+  padding: 0.4rem 0.6rem;
+}
+
+/* Buttons */
+.btn {
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-warning {
+  background-color: #ffc107;
+  border-color: #ffc107;
+  color: #000;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800;
+  border-color: #d39e00;
+  transform: translateY(-2px);
+}
+
+.btn-outline-primary:hover {
+  transform: translateY(-2px);
+}
+
+/* Product Detail Page Styles */
+
+/* Breadcrumb */
+.breadcrumb {
+  background-color: #f8f9fa;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+}
+
+/* Product Image */
+.product-image-container {
+  position: relative;
+}
+
+#main-image {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: cover;
+}
+
+.no-image-placeholder {
+  height: 500px;
+  background-color: #f8f9fa;
+  border: 2px dashed #dee2e6;
+}
+
+/* Product Info */
+.product-title {
+  color: #333;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/* Price Section in Detail */
+.price-with-discount .original-price {
+  font-size: 1.2rem;
+}
+
+.price-with-discount .sale-price {
+  font-size: 2.5rem !important;
+}
+
+.current-price {
+  font-size: 2.5rem !important;
+}
+
+.discount-badge .badge {
+  font-size: 1rem !important;
+  padding: 0.5rem 1rem;
+}
+
+/* Stock Section */
+.stock-section .badge {
+  font-size: 1rem !important;
+  padding: 0.5rem 1rem;
+}
+
+.stock-count {
+  font-size: 0.9rem;
+}
+
+/* Description */
+.product-description {
+  border-top: 1px solid #dee2e6;
+  padding-top: 1.5rem;
+}
+
+.description-text {
+  color: #666;
+  line-height: 1.7;
+}
+
+/* Action Buttons */
+.action-buttons .btn-lg {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Additional Info Icons */
+.additional-info i {
+  font-size: 1.5rem;
+}
+
+/* Product Features Section */
+.product-features {
+  border: 1px solid #e9ecef;
+}
+
+.feature-item i {
+  font-size: 1.2rem;
+  width: 20px;
+}
+
+.feature-item h6 {
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+/* Footer */
+footer {
+  background-color: #343a40 !important;
+  margin-top: 50px;
+}
+
+footer h5 {
+  color: #ffc107;
+  margin-bottom: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    padding-top: 70px;
+  }
+
+  .hero-section {
+    margin-top: 10px;
+    padding: 2rem 1rem !important;
+  }
+
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  .product-card {
+    margin-bottom: 1.5rem;
+  }
+
+  .price-with-discount .sale-price,
+  .current-price {
+    font-size: 2rem !important;
+  }
+
+  .product-features {
+    margin-top: 2rem;
+    padding: 1.5rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .card-img-top {
+    height: 180px;
+  }
+
+  .action-buttons .btn-lg {
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+  }
+
+  .price-with-discount .sale-price,
+  .current-price {
+    font-size: 1.75rem !important;
+  }
+}
+
+/* Loading and Hover Effects */
+.card-img-top,
+#main-image {
+  background-color: #f8f9fa;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+/* Focus States for Accessibility */
+.btn:focus,
+.nav-link:focus {
+  box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.5);
+}
+
+/* Animation Classes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.product-card {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Print Styles */
+@media print {
+  .navbar,
+  footer,
+  .action-buttons {
+    display: none !important;
+  }
+
+  body {
+    padding-top: 0;
+  }
+}

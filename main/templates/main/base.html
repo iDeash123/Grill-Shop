@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Grill Masters - Преміальні грилі{% endblock %}</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Load static files -->
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+</head>
+<body>
+    <!-- Fixed Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand fw-bold" href="{% url 'main:popular_list' %}">
+                <span class="text-warning">GRILL</span> MASTERS
+            </a>
+            
+            <!-- Navbar Toggle for Mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Navigation Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'main:popular_list' %}">Головна</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'main:popular_list' %}">Магазин</a>
+                    </li>
+                </ul>
+                
+                <!-- Right side buttons -->
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="cart-link">
+                            <i class="fas fa-shopping-cart"></i> Кошик
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="login-link">
+                            <i class="fas fa-user"></i> Увійти
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        {% block content %}
+        {% endblock %}
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Grill Masters</h5>
+                    <p>Ваш найкращий вибір для високоякісних грилів та обладнання для приготування на відкритому повітрі.</p>
+                </div>
+                <div class="col-md-6">
+                    <h5>Контакти</h5>
+                    <p>Email: info@grillmasters.com<br>
+                    Телефон: (555) 123-GRILL</p>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p>&copy; 2024 Grill Masters. Усі права захищено.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</body>
+</html>
